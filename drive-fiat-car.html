@@ -18,9 +18,14 @@ var fiat = {
     convertible: false,
     mileage: 88000,
     started: false,
+	fuel:0,
 
     start: function() {
+		if (this.fuel == 0) {
+			console.log("The car is on empty, fill up before starting!");
+		} else {
 		this.started = true;
+		}
 	},
 
     stop: function() {
@@ -30,14 +35,23 @@ var fiat = {
 	//instead of alerts, I had it go to console.log
     drive: function() {
 		if (this.started) {
-			console.log(this.make + " " + this.model + " goes zoom zoom!" );
+			if (this.fuel > 0) {
+				console.log(this.make + " " + this.model + " goes zoom zoom!" );
+				this.fuel = this.fuel - 1;
+			} else {
+				console.log("Uh oh, out of fuel.");
+				this.stop();
+			}
 		} else {
-			console.log("You need to start the engine first.");
+		console.log("You need to start the engine first.");
 		}
+	},
+	addFuel: function(amount) {
+		this.fuel = this.fuel + amount;
 	}
 };
 	
-var chevy = { 
+/*var chevy = { 
     make: "Chevy",
     model: "Bel Air",
     year: 1957, 
@@ -91,14 +105,15 @@ var taxi = {
 			console.log("You need to start the engine first.");
 		}
 	}
-};
+};*/
 
 fiat.drive();
 fiat.start();
+fiat.addFuel(2);
 fiat.drive();
 fiat.stop();
 	
-chevy.drive();
+/*chevy.drive();
 chevy.start();
 chevy.drive();
 chevy.stop();
@@ -106,7 +121,7 @@ chevy.stop();
 taxi.drive();
 taxi.start();
 taxi.drive();
-taxi.stop();
+taxi.stop();*/
 	
 </script>
 	
