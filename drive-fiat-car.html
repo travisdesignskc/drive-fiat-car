@@ -27,11 +27,68 @@ var fiat = {
 		this.started = false;
 	},
 
+	//instead of alerts, I had it go to console.log
     drive: function() {
 		if (this.started) {
-			alert("Zoom zoom!");
+			console.log(this.make + " " + this.model + " goes zoom zoom!" );
 		} else {
-			alert("You need to start the engine first.");
+			console.log("You need to start the engine first.");
+		}
+	}
+};
+	
+var chevy = { 
+    make: "Chevy",
+    model: "Bel Air",
+    year: 1957, 
+    color: "red",
+    passengers: 2,
+    convertible: false,
+    mileage: 1021,
+    started: false,
+
+    start: function() {
+		this.started = true;
+	},
+
+    stop: function() {
+		this.started = false;
+	},
+
+	//instead of alerts, I had it go to console.log
+    drive: function() {
+		if (this.started) {
+			console.log(this.make + " " + this.model + " goes zoom zoom!" );
+		} else {
+			console.log("You need to start the engine first.");
+		}
+	}
+};
+	
+var taxi = { 
+    make: "Webville Motors",
+    model: "Taxi",
+    year: 1955, 
+    color: "yellow",
+    passengers: 4,
+    convertible: false,
+    mileage: 281341,
+    started: false,
+
+    start: function() {
+		this.started = true;
+	},
+
+    stop: function() {
+		this.started = false;
+	},
+
+	//instead of alerts, I had it go to console.log
+    drive: function() {
+		if (this.started) {
+			console.log(this.make + " " + this.model + " goes zoom zoom!" );
+		} else {
+			console.log("You need to start the engine first.");
 		}
 	}
 };
@@ -40,6 +97,16 @@ fiat.drive();
 fiat.start();
 fiat.drive();
 fiat.stop();
+	
+chevy.drive();
+chevy.start();
+chevy.drive();
+chevy.stop();
+	
+taxi.drive();
+taxi.start();
+taxi.drive();
+taxi.stop();
 	
 </script>
 	
